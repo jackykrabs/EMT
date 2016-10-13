@@ -38,49 +38,50 @@ $(document).ready(function(){
     
    </head>
   <body>
+  <div class="container">
     <h2>Add to Medical</h2>
-    <form method="post" action="medicalChange.php">
+    <form method="post" action="medicalProcess.php">
       <div class="col-md-3 col-xs-6">
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
       <div class="col-md-3 col-xs-6">
-        Patient Data<input type="text" name="patient_data" id="patient_data"/>
+        Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Life Threat</br><input type="text" name="life_threat" id="life_threat"/>
+        Potentail Life Threat</br><input type="text" name="potential_life_threat" id="potential_life_threat"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Level of Consciousness<input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
+        Level of Consciousness</br><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Respirations</br><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Lung Sounds<input type="text" name="lung_sounds" id="lung_sounds"/>
+        Lung Sounds</br><input type="text" name="lung_sounds" id="lung_sounds"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Pulse</br><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Blood Pressure<input type="text" name="blood_pressure" id="blood_pressure"/>
+        Blood Pressure</br><input type="text" name="blood_pressure" id="blood_pressure"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Carotid Pulse<input type="text" name="carotid_pulse" id="carotid_pulse"/>
+        Carotid Pulse</br><input type="text" name="carotid_pulse" id="carotid_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Femoral Pulse<input type="text" name="femoral_pulse" id="femoral_pulse"/>
+        Femoral Pulse</br><input type="text" name="femoral_pulse" id="femoral_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Radial Pulse<input type="text" name="radial_pulse" id="radial_pulse"/>
+        Radial Pulse</br><input type="text" name="radial_pulse" id="radial_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Capillary Refill<input type="text" name="capillary_refill" id="capillary_refill"/>
+        Capillary Refill</br><input type="text" name="capillary_refill" id="capillary_refill"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Skin Temperature<input type="text" name="skin_temperature" id="skin_temperature"/>
+        Skin Temperature</br><input type="text" name="skin_temperature" id="skin_temperature"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Skin Moisture<input type="text" name="skin_moisture" id="skin_moisture"/>
+        Skin Moisture</br><input type="text" name="skin_moisture" id="skin_moisture"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Skin Color</br><input type="text" name="skin_color" id="skin_color"/>
@@ -173,43 +174,43 @@ $result = $conn->query("SELECT * FROM $table");
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
       <div class="col-md-3 col-xs-6">
-        Patient Data<input type="text" name="patient_data" id="patient_data"/>
+        Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Life Threat</br><input type="text" name="life_threat" id="life_threat"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Level of Consciousness<input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
+        Level of Consciousness</br><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Respirations</br><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Lung Sounds<input type="text" name="lung_sounds" id="lung_sounds"/>
+        Lung Sounds</br><input type="text" name="lung_sounds" id="lung_sounds"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Pulse</br><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Blood Pressure<input type="text" name="blood_pressure" id="blood_pressure"/>
+        Blood Pressure</br><input type="text" name="blood_pressure" id="blood_pressure"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Carotid Pulse<input type="text" name="carotid_pulse" id="carotid_pulse"/>
+        Carotid Pulse</br><input type="text" name="carotid_pulse" id="carotid_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Femoral Pulse<input type="text" name="femoral_pulse" id="femoral_pulse"/>
+        Femoral Pulse</br><input type="text" name="femoral_pulse" id="femoral_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Radial Pulse<input type="text" name="radial_pulse" id="radial_pulse"/>
+        Radial Pulse</br><input type="text" name="radial_pulse" id="radial_pulse"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Capillary Refill<input type="text" name="capillary_refill" id="capillary_refill"/>
+        Capillary Refill</br><input type="text" name="capillary_refill" id="capillary_refill"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Skin Temperature<input type="text" name="skin_temperature" id="skin_temperature"/>
+        Skin Temperature</br><input type="text" name="skin_temperature" id="skin_temperature"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Skin Moisture<input type="text" name="skin_moisture" id="skin_moisture"/>
+        Skin Moisture</br><input type="text" name="skin_moisture" id="skin_moisture"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Skin Color</br><input type="text" name="skin_color" id="skin_color"/>
@@ -277,6 +278,7 @@ if ($result->num_rows > 0) {
 ?>
 
   </table>
+  </div>
   </body>
 </html>
       

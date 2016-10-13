@@ -24,7 +24,7 @@ if($idtoedit != '')
 }
 	?>
 	
-	 <form method="post" action="medicalChange.php">
+	 <form method="post" action="medicalUpdate.php">
       <div class="col-md-3 col-xs-6">
         Scenario <input type="text" name="scenario" id="scenario" />
       </div>
@@ -83,9 +83,6 @@ if($idtoedit != '')
     </form>
 	<?php
 
-	
-		$conn->query("DELETE FROM $table WHERE id=$idtodelete");
-		$conn->close();
 
-	//header("Location: edit.php");
+	//header("Location: index.php");
 ?>

@@ -22,10 +22,6 @@ $respiratory = $_POST['respiratory'];
 $skeletal = $_POST['skeletal'];
 $other = $_POST['other'];
 
-$fname = $_POST['fName'];
-$lname = $_POST['lName'];
-$email = $_POST['email'];
-
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -40,12 +36,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$conn->query("INSERT INTO $table (scenario, patient_data, life_threat, level_of_consciousness,
-  respirations, lung_sounds, pulse, blood_pressure, carotid_pulse, femoral_pulse, radial_pusle,
-  capillary_refill, skin_temperature, skin_moisture, skin_color, pupils, sao2)
-VALUES ('$scenario', '$patient_data', '$life_threat', '$level_of_consciousness', '$respirations',
-  '$lung_sounds', '$pulse', '$blood_pressure', '$carotid_pulse', '$femoral_pulse', '$radial_pusle', '$capillary_refill', '$skin_temperature', '$skin_color', '$pupils', '$sao2')");
+$conn->query("INSERT INTO $table (scenario, patient_data, life_threat,
+level_of_consciousness, respirations, lung_sounds, pulse, blood_pressure, carotid_pulse, femoral_pulse,
+radial_pulse, capillary_refill, skin_temperature, skin_moisture, skin_color, pupils, sao2, tag,airway,respiratory,skeletal,other)
+VALUES ('$scenario', '$patient_data','$potential_life_threat', '$level_of_consciousness',
+'$respirations', '$lung_sounds', '$pulse', '$blood_pressure', '$carotid_pulse', '$femoral_pulse', 
+'$radial_pulse', '$capillary_refill', '$skin_temperature', '$skin_moisture', '$skin_color', '$pupils',
+'$sao2', '$tag','$airway','$respiratory','$skeletal','$other')");
 $conn->close();
-header('Location: edit.php');
+header('Location: index.php');
 
 ?>
