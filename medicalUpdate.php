@@ -40,21 +40,13 @@ $idtoedit = $_GET['id'];
 
 //update the values of the table in the data base
 $conn->query("UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
-<<<<<<< HEAD
 life_threat='$life_threat', level_of_consciousness='$level_of_consciousness', respirations='$respirations',
 lung_sounds='$lung_sounds',pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', 
 femoral_pulse='$femoral_pulse',radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', 
 skin_temperature='$skin_temperature',skin_moisture='$skin_moisture', skin_color='$skin_color',
 pupils='$pupils', sao2='$sao2', tag='$tag'
 WHERE id=$idtoedit");
-=======
-life_threat='$life_threat', potential_life_threat='$potential_life_threat', 
-level_of_consciousness='$level_of_consciousness', respirations='$respirations', lung_sounds='$lung_sounds',
-pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', femoral_pulse='$femoral_pulse',
-radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', skin_temperature='$skin_temperature',
-skin_moisture='$skin_moisture', skin_color='$skin_color', pupils='$pupils', sao2='$sao2', tag='$tag'
-WHERE id='$idtoedit'");
->>>>>>> origin/master
+
 $conn->close();
 
 
