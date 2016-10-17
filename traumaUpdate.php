@@ -1,4 +1,5 @@
 <?php
+//get all the data from traumaChange.php 
 $tag = $_POST['tag'];
 $scenario = $_POST['scenario'];
 $patient_data = $_POST['patient_data'];
@@ -22,9 +23,6 @@ $respiratory = $_POST['respiratory'];
 $skeletal = $_POST['skeletal'];
 $other = $_POST['other'];
 
-$fname = $_POST['fName'];
-$lname = $_POST['lName'];
-$email = $_POST['email'];
 
 $servername = "localhost";
 $username = "root";
@@ -40,10 +38,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+//get the id of the specific test we're updating
 $idtoedit = $_GET['id'];
 
 
-$conn->query("UPDATE $table SET fname='$fname', lname='$lname', email='$email' WHERE id=$idtoedit");
+//update the data base with the new values
+$conn->query("UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
+life_threat='$life_threat', potential_life_threat='$potential_life_threat', 
+level_of_consciousness='$level_of_consciousness', respirations='$respirations', lung_sounds='$lung_sounds',
+pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', femoral_pulse='$femoral_pulse',
+radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', skin_temperature='$skin_temperature',
+skin_moisture='$skin_moisture', skin_color='$skin_color', pupils='$pupils', sao2='$sao2', airway='$airway', 
+respiratory = '$respiratory', skeletal = '$skeletal', other = '$other', tag='$tag'
+WHERE id='$idtoedit'");
 $conn->close();
 
 

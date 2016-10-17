@@ -50,7 +50,7 @@ $(document).ready(function(){
         Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Potentail Life Threat</br><input type="text" name="potential_life_threat" id="potential_life_threat"/>
+        Potential Life Threat</br><input type="text" name="potential_life_threat" id="potential_life_threat"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Level of Consciousness</br><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>

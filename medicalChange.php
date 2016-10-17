@@ -34,14 +34,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+//get the specific ID of the test to edit
 $idtoedit = $_GET['id'];
 
 
+//check to make sure the id is valid and getting the specific test 
 if($idtoedit != '')
 {
 	$result = $conn->query("SELECT * FROM $table WHERE id=$idtoedit");
 	$row = $result->fetch_assoc();
 }
+//create a form and send the data from that form to medicalUpdate.php 
 	?>
 <body>
 <div class="container">
