@@ -19,7 +19,7 @@ $idtodelete = $_GET['id'];
 $conn->query("DELETE FROM $table WHERE id=$idtodelete");
 $conn->close();
 
-header("Location: edit.php");
+header("Location: index.php");
 
 ?>
 

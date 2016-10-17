@@ -38,9 +38,11 @@ $(document).ready(function(){
     
    </head>
   <body>
+  <!-- Container that holds the content and gives it margins--!>
   <div class="container">
     <h2>Add to Medical</h2>
     <form method="post" action="medicalProcess.php">
+	 <!-- The divs give each field a certain width depending on the screen width--!>
       <div class="col-md-3 col-xs-6">
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
@@ -101,6 +103,7 @@ $(document).ready(function(){
       <br/>
       <h2>Medical Scenarios</h2>
       <br/>
+	  <!--Table header--!>
       <tr>
         <th>ID</th>
         <th>Scenario</th>
@@ -113,20 +116,21 @@ $(document).ready(function(){
       </tr>
    
 <?php
-if ($result->num_rows > 0) {
+//Check if table is empty
+if ($result->num_rows > 0) { 
     while($row = $result->fetch_assoc()) {
         
 		echo '<tr>';
-		
+		//table row content
 		echo '<td>'.$row['id'].'</td>';
 		echo '<td>'.$row['scenario'].'</td>';
 		echo '<td>'.$row['patient_data'].'</td>';
 		echo '<td>'.$row['life_threat'].'</td>';
 		echo '<td>'.$row['tag'].'</td>';
-		
+		//table row functions
 		echo '<td><a href="medicalChange.php?id='.$row['id'].'">Edit</a></td>';
-		echo '<td><a href="delete.php?id='.$row['id'].'">Delete</a></td>';
-    echo '<td><a href="medicalDetails.php?id='.$row['id'].'">Details</a></td>';
+		echo '<td><a href="medicalDelete.php?id='.$row['id'].'">Delete</a></td>';
+		echo '<td><a href="medicalDetails.php?id='.$row['id'].'">Details</a></td>';
 
 		
 		echo '</tr>';
@@ -170,6 +174,7 @@ $result = $conn->query("SELECT * FROM $table");
   <body>
     <h2>Add to Trauma</h2>
     <form method="post" action="traumaProcess.php">
+	  <!-- The divs give each field a certain width depending on the screen width--!>
       <div class="col-md-3 col-xs-6">
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
@@ -239,6 +244,7 @@ $result = $conn->query("SELECT * FROM $table");
 
       <input type="submit" />
     </form>
+	 <!-- Dislays the table headers--!>
     <table border="1">
       <br/>
       <h2>Trauma Scenarios</h2>
@@ -259,16 +265,18 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         
 		echo '<tr>';
-		
+
+		//table content for each row
 		echo '<td>'.$row['id'].'</td>';
 		echo '<td>'.$row['scenario'].'</td>';
 		echo '<td>'.$row['patient_data'].'</td>';
 		echo '<td>'.$row['life_threat'].'</td>';
 		echo '<td>'.$row['tag'].'</td>';
-		
+
+		//table row functions
 		echo '<td><a href="traumaChange.php?id='.$row['id'].'">Edit</a></td>';
 		echo '<td><a href="traumaDelete.php?id='.$row['id'].'">Delete</a></td>';
-    echo '<td><a href="traumaDetails.php?id='.$row['id'].'">Details</a></td>';
+		echo '<td><a href="traumaDetails.php?id='.$row['id'].'">Details</a></td>';
 
 		
 		echo '</tr>';
