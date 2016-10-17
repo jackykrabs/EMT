@@ -37,18 +37,21 @@ if ($conn->connect_error) {
 //get the specific name of the test we want to update
 $idtoedit = $_GET['id'];
 
-
-//update the values of the table in the data base
-$conn->query("UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
+$sql = "UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
 life_threat='$life_threat', level_of_consciousness='$level_of_consciousness', respirations='$respirations',
 lung_sounds='$lung_sounds',pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', 
 femoral_pulse='$femoral_pulse',radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', 
 skin_temperature='$skin_temperature',skin_moisture='$skin_moisture', skin_color='$skin_color',
 pupils='$pupils', sao2='$sao2', tag='$tag'
-WHERE id=$idtoedit");
+WHERE id=$idtoedit";
+//update the values of the table in the data base
+if($conn->query($sql)===true)
+  echo "update successful";
+else
+  echo "error!  Unable to update database";
 
 $conn->close();
 
 
-header('Location: index.php');
+//header('Location: index.php');
 ?>
