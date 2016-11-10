@@ -18,7 +18,8 @@
 
       </head>
 </html>
- <?php
+
+<?php
 
 $servername = "localhost";
 $username = "root";
@@ -34,10 +35,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//get the specific ID of the test to edit
-$idtoedit = $_GET['id'];
-
-
 //check to make sure the id is valid and getting the specific test 
 if($idtoedit != '')
 {
@@ -49,59 +46,62 @@ if($idtoedit != '')
 <body>
 <div class="container">
   <form method="post" action="medicalUpdate.php">
+	<div class="col-md-3 col-xs-6">
+	<h2> Row: <?php echo $_GET['id']; ?></h2> <input type="hidden" name ="id" id="id" value = "<?php echo $_GET['id']; ?>" />
+	</div>
     <div class="col-md-3 col-xs-6">
-      Scenario <input type="text" name="scenario" id="scenario" />
+      <div class="field_title">Scenario</div><input type="text" name="scenario" id="scenario"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Patient Data<input type="text" name="patient_data" id="patient_data"/>
+      <div class="field_title">Patient Data</div><input type="text" name="patient_data" id="patient_data"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Life Threat<input type="text" name="life_threat" id="life_threat"/>
+      <div class="field_title">Life Threat</div><input type="text" name="life_threat" id="life_threat"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Level of Consciousness<input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
+      <div class="field_title">Level of Consciousness</div><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Respirations<input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
+      <div class="field_title">Respirations</div><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Lung Sounds<input type="text" name="lung_sounds" id="lung_sounds"/>
+      <div class="field_title">Lung Sounds</div><input type="text" name="lung_sounds" id="lung_sounds"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Pulse<input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
+      <div class="field_title">Pulse</div><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Blood Pressure<input type="text" name="blood_pressure" id="blood_pressure"/>
+      <div class="field_title">Blood Pressure</div><input type="text" name="blood_pressure" id="blood_pressure"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Carotid Pulse<input type="text" name="carotid_pulse" id="carotid_pulse"/>
+      <div class="field_title">Carotid Pulse</div><input type="text" name="carotid_pulse" id="carotid_pulse"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Femoral Pulse<input type="text" name="femoral_pulse" id="femoral_pulse"/>
+      <div class="field_title">Femoral Pulse</div><input type="text" name="femoral_pulse" id="femoral_pulse"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Radial Pulse<input type="text" name="radial_pulse" id="radial_pulse"/>
+      <div class="field_title">Radial Pulse</div><input type="text" name="radial_pulse" id="radial_pulse"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Capillary Refill<input type="text" name="capillary_refill" id="capillary_refill"/>
+      <div class="field_title">Capillary Refill</div><input type="text" name="capillary_refill" id="capillary_refill"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Skin Temperature<input type="text" name="skin_temperature" id="skin_temperature"/>
+      <div class="field_title">Skin Temperature</div><input type="text" name="skin_temperature" id="skin_temperature"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Skin Moisture<input type="text" name="skin_moisture" id="skin_moisture"/>
+      <div class="field_title">Skin Moisture</div><input type="text" name="skin_moisture" id="skin_moisture"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Skin Color<input type="text" name="skin_color" id="skin_color"/>
+      <div class="field_title">Skin Color</div><input type="text" name="skin_color" id="skin_color"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Pupils<input type="text" name="pupils" id="pupils"/>
+      <div class="field_title">Pupils</div><input type="text" name="pupils" id="pupils"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      SaO2<input type="text" name="sao2" id="sao2"/>
+      <div class="field_title">SaO2</div><input type="text" name="sao2" id="sao2"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      Tag<input type="text" name="tag" id="tag"/>
+      <div class="field_title">Tag</div><input type="text" name="tag" id="tag"/>
     </div>
     <input type="submit" />
   </form>
@@ -111,8 +111,3 @@ if($idtoedit != '')
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
-	<?php
-
-
-	//header("Location: index.php");
-?>

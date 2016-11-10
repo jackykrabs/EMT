@@ -43,10 +43,10 @@ $(document).ready(function(){
     <h2>Add to Medical</h2>
     <form method="post" action="medicalProcess.php">
 	 <!-- The divs give each field a certain width depending on the screen width--!>
-      <div class="col-md-3 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
-      <div class="col-md-3 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
       <div class="col-md-3 col-xs-6">

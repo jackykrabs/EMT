@@ -1,5 +1,4 @@
 <?php
-//get the data from medicalChange.php 
 $tag = $_POST['tag'];
 $scenario = $_POST['scenario'];
 $patient_data = $_POST['patient_data'];
@@ -11,14 +10,13 @@ $pulse = $_POST['pulse'];
 $blood_pressure = $_POST['blood_pressure'];
 $carotid_pulse = $_POST['carotid_pulse'];
 $femoral_pulse = $_POST['femoral_pulse'];
-$radial_pulse = $_POST['radial_pulse'];
+$radial_pusle = $_POST['radial_pusle'];
 $capillary_refill = $_POST['capillary_refill'];
 $skin_temperature = $_POST['skin_temperature'];
 $skin_moisture = $_POST['skin_moisture'];
 $skin_color = $_POST['skin_color'];
 $pupils = $_POST['pupils'];
 $sao2 = $_POST['sao2'];
-
 
 $servername = "localhost";
 $username = "root";
@@ -29,29 +27,18 @@ $table = 'medical';
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+$idtoedit = $_POST['id'];
+echo $idtoedit;
+echo $scenario;
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//get the specific name of the test we want to update
-$idtoedit = $_GET['id'];
-
-$sql = "UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
-life_threat='$life_threat', level_of_consciousness='$level_of_consciousness', respirations='$respirations',
-lung_sounds='$lung_sounds',pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', 
-femoral_pulse='$femoral_pulse',radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', 
-skin_temperature='$skin_temperature',skin_moisture='$skin_moisture', skin_color='$skin_color',
-pupils='$pupils', sao2='$sao2', tag='$tag'
-WHERE id=$idtoedit";
-//update the values of the table in the data base
-if($conn->query($sql)===true)
-  echo "update successful";
-else
-  echo "error!  Unable to update database";
-
 $conn->close();
+$conn->query("UPDATE $table SET scenario = $scenario WHERE id=$idtoedit");
 
+header("Location: index.php");
 
-//header('Location: index.php');
 ?>
