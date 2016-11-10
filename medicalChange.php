@@ -35,12 +35,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$idtoedit = $_GET['id'];
+
 //check to make sure the id is valid and getting the specific test 
 if($idtoedit != '')
 {
 	$result = $conn->query("SELECT * FROM $table WHERE id=$idtoedit");
 	$row = $result->fetch_assoc();
 }
+
+print_r($row);
 //create a form and send the data from that form to medicalUpdate.php 
 	?>
 <body>
@@ -50,58 +54,76 @@ if($idtoedit != '')
 	<h2> Row: <?php echo $_GET['id']; ?></h2> <input type="hidden" name ="id" id="id" value = "<?php echo $_GET['id']; ?>" />
 	</div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Scenario</div><input type="text" name="scenario" id="scenario"/>
+      <div class="field_title">Scenario</div><input type="text" name="scenario" id="scenario" 
+	  value="<?php echo $row['scenario']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Patient Data</div><input type="text" name="patient_data" id="patient_data"/>
+      <div class="field_title">Patient Data</div><input type="text" name="patient_data" id="patient_data"
+	   value="<?php echo $row['patient_data']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Life Threat</div><input type="text" name="life_threat" id="life_threat"/>
+      <div class="field_title">Life Threat</div><input type="text" name="life_threat" id="life_threat"
+	   value="<?php echo $row['life_threat']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Level of Consciousness</div><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
+      <div class="field_title">Level of Consciousness</div><input type="text" name="level_of_consciousness" id="level_of_consciousness"
+	   value="<?php echo $row['level_of_consciousness']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Respirations</div><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
+      <div class="field_title">Respirations</div><input type="number" name="respirations" id="respirations" min="0" max ="10000"
+	   value="<?php echo $row['respirations']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Lung Sounds</div><input type="text" name="lung_sounds" id="lung_sounds"/>
+      <div class="field_title">Lung Sounds</div><input type="text" name="lung_sounds" id="lung_sounds"
+	   value="<?php echo $row['lung_sounds']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Pulse</div><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
+      <div class="field_title">Pulse</div><input type="number" name="pulse" id="pulse" min="0" max ="10000"
+	   value="<?php echo $row['pulse']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Blood Pressure</div><input type="text" name="blood_pressure" id="blood_pressure"/>
+      <div class="field_title">Blood Pressure</div><input type="text" name="blood_pressure" id="blood_pressure"
+	   value="<?php echo $row['blood_pressure']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Carotid Pulse</div><input type="text" name="carotid_pulse" id="carotid_pulse"/>
+      <div class="field_title">Carotid Pulse</div><input type="text" name="carotid_pulse" id="carotid_pulse"
+	   value="<?php echo $row['carotid_pulse']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Femoral Pulse</div><input type="text" name="femoral_pulse" id="femoral_pulse"/>
+      <div class="field_title">Femoral Pulse</div><input type="text" name="femoral_pulse" id="femoral_pulse"
+	   value="<?php echo $row['femoral_pulse']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Radial Pulse</div><input type="text" name="radial_pulse" id="radial_pulse"/>
+      <div class="field_title">Radial Pulse</div><input type="text" name="radial_pulse" id="radial_pulse"
+	   value="<?php echo $row['radial_pulse']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Capillary Refill</div><input type="text" name="capillary_refill" id="capillary_refill"/>
+      <div class="field_title">Capillary Refill</div><input type="text" name="capillary_refill" id="capillary_refill"
+	   value="<?php echo $row['capillary_refill']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Skin Temperature</div><input type="text" name="skin_temperature" id="skin_temperature"/>
+      <div class="field_title">Skin Temperature</div><input type="text" name="skin_temperature" id="skin_temperature"
+	   value="<?php echo $row['skin_temperature']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Skin Moisture</div><input type="text" name="skin_moisture" id="skin_moisture"/>
+      <div class="field_title">Skin Moisture</div><input type="text" name="skin_moisture" id="skin_moisture"
+	   value="<?php echo $row['skin_moisture']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Skin Color</div><input type="text" name="skin_color" id="skin_color"/>
+      <div class="field_title">Skin Color</div><input type="text" name="skin_color" id="skin_color"
+	   value="<?php echo $row['skin_color']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Pupils</div><input type="text" name="pupils" id="pupils"/>
+      <div class="field_title">Pupils</div><input type="text" name="pupils" id="pupils"
+	   value="<?php echo $row['pupils']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">SaO2</div><input type="text" name="sao2" id="sao2"/>
+      <div class="field_title">SaO2</div><input type="text" name="sao2" id="sao2"
+	   value="<?php echo $row['sao2']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Tag</div><input type="text" name="tag" id="tag"/>
+      <div class="field_title">Tag</div><input type="text" name="tag" id="tag"
+	   value="<?php echo $row['tag']; ?>"/>
     </div>
     <input type="submit" />
   </form>
