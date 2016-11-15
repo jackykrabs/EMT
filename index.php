@@ -14,8 +14,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$result = $conn->query("SELECT * FROM $table");
+// Create database
+$sql = "CREATE DATABASE emt";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . $conn->error;
+}
 
+$conn->close();
+
+$result = $conn->query("SELECT * FROM $table");
 
 ?>
 <html>
@@ -35,9 +44,12 @@ $(document).ready(function(){
 });
 </script>
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="CSS/styles.css">
 
     
+=======
+>>>>>>> origin/master
    </head>
   <body>
   <!-- Container that holds the content and gives it margins--!>
@@ -116,12 +128,12 @@ $(document).ready(function(){
         <th>Delete</th>
         <th>Details</th>
       </tr>
-   
+
 <?php
 //Check if table is empty
-if ($result->num_rows > 0) { 
+if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        
+
 		echo '<tr>';
 		//table row content
 		echo '<td>'.$row['id'].'</td>';
@@ -134,10 +146,10 @@ if ($result->num_rows > 0) {
 		echo '<td><a href="medicalDelete.php?id='.$row['id'].'">Delete</a></td>';
 		echo '<td><a href="medicalDetails.php?id='.$row['id'].'">Details</a></td>';
 
-		
+
 		echo '</tr>';
     }
-} 
+}
 
 ?>
  </table>
@@ -261,11 +273,11 @@ $result = $conn->query("SELECT * FROM $table");
         <th>Delete</th>
         <th>Details</th>
       </tr>
-  
+
 <?php
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        
+
 		echo '<tr>';
 
 		//table content for each row
@@ -280,10 +292,10 @@ if ($result->num_rows > 0) {
 		echo '<td><a href="traumaDelete.php?id='.$row['id'].'">Delete</a></td>';
 		echo '<td><a href="traumaDetails.php?id='.$row['id'].'">Details</a></td>';
 
-		
+
 		echo '</tr>';
     }
-} 
+}
 
 ?>
 
@@ -291,4 +303,3 @@ if ($result->num_rows > 0) {
   </div>
   </body>
 </html>
-      
