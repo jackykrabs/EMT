@@ -23,7 +23,6 @@ $result = $conn->query("SELECT * FROM $table");
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -35,6 +34,9 @@ $(document).ready(function(){
     });
 });
 </script>
+
+<link rel="stylesheet" href="CSS/styles.css">
+
     
    </head>
   <body>
@@ -175,10 +177,10 @@ $result = $conn->query("SELECT * FROM $table");
     <h2>Add to Trauma</h2>
     <form method="post" action="traumaProcess.php">
 	  <!-- The divs give each field a certain width depending on the screen width--!>
-      <div class="col-md-3 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         Scenario</br><input type="text" name="scenario" id="scenario" />
       </div>
-      <div class="col-md-3 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
       <div class="col-md-3 col-xs-6">
