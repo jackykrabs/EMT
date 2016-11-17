@@ -15,7 +15,7 @@
           });
           });
         </script>
-
+	<link rel="stylesheet" href = "CSS/styles.css">
       </head>
 </html>
 
@@ -44,20 +44,20 @@ if($idtoedit != '')
 	$row = $result->fetch_assoc();
 }
 
-print_r($row);
+//print_r($row);
 //create a form and send the data from that form to medicalUpdate.php 
 	?>
 <body>
 <div class="container">
   <form method="post" action="medicalUpdate.php">
-	<div class="col-md-3 col-xs-6">
+	<div class="col-xs-12">
 	<h2> Row: <?php echo $_GET['id']; ?></h2> <input type="hidden" name ="id" id="id" value = "<?php echo $_GET['id']; ?>" />
 	</div>
-    <div class="col-md-3 col-xs-6">
+    <div class="col-md-6 col-xs-12">
       <div class="field_title">Scenario</div><input type="text" name="scenario" id="scenario" 
 	  value="<?php echo $row['scenario']; ?>"/>
     </div>
-    <div class="col-md-3 col-xs-6">
+    <div class="col-md-6 col-xs-12">
       <div class="field_title">Patient Data</div><input type="text" name="patient_data" id="patient_data"
 	   value="<?php echo $row['patient_data']; ?>"/>
     </div>
@@ -122,10 +122,10 @@ print_r($row);
 	   value="<?php echo $row['sao2']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Tag</div><input type="text" name="tag" id="tag"
+      <div class="field_title">Category</div><input type="text" name="tag" id="tag"
 	   value="<?php echo $row['tag']; ?>"/>
     </div>
-    <input type="submit" />
+    <input class="submit" type="submit" />
   </form>
 
 </div>

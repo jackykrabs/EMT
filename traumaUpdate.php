@@ -1,5 +1,13 @@
 <?php
-//get all the data from traumaChange.php 
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = 'emt';
+$table = 'trauma';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$idtoedit = $_POST['id'];
 $tag = $_POST['tag'];
 $scenario = $_POST['scenario'];
 $patient_data = $_POST['patient_data'];
@@ -11,48 +19,27 @@ $pulse = $_POST['pulse'];
 $blood_pressure = $_POST['blood_pressure'];
 $carotid_pulse = $_POST['carotid_pulse'];
 $femoral_pulse = $_POST['femoral_pulse'];
-$radial_pusle = $_POST['radial_pusle'];
+$radial_pulse = $_POST['radial_pulse'];
 $capillary_refill = $_POST['capillary_refill'];
 $skin_temperature = $_POST['skin_temperature'];
 $skin_moisture = $_POST['skin_moisture'];
 $skin_color = $_POST['skin_color'];
 $pupils = $_POST['pupils'];
 $sao2 = $_POST['sao2'];
-$airway = $_POST['airway'];
-$respiratory = $_POST['respiratory'];
-$skeletal = $_POST['skeletal'];
-$other = $_POST['other'];
-
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = 'emt';
-$table = 'trauma';
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$conn->query("UPDATE $table SET scenario = '$scenario', patient_data = '$patient_data',
+life_threat = '$life_threat', level_of_consciousness = '$level_of_consciousness',
+respirations = '$respirations', lung_sounds = '$lung_sounds' , pulse = '$pulse',
+blood_pressure='$blood_pressure' , carotid_pulse = '$carotid_pulse', femoral_pulse='$femoral_pulse' ,
+radial_pulse = '$radial_pulse' , capillary_refill = '$capillary_refill', skin_temperature ='$skin_temperature',
+skin_moisture = '$skin_moisture',skin_color = '$skin_color', pupils = '$pupils' ,sao2= '$sao2', tag = '$tag' WHERE id=$idtoedit");
 
-//get the id of the specific test we're updating
-$idtoedit = $_GET['id'];
-
-
-//update the data base with the new values
-$conn->query("UPDATE $table SET scenario='$scenario', patient_data='$patient_data', 
-life_threat='$life_threat', potential_life_threat='$potential_life_threat', 
-level_of_consciousness='$level_of_consciousness', respirations='$respirations', lung_sounds='$lung_sounds',
-pulse='$pulse', blood_pressure='$blood_pressure', carotid_pulse='$carotid_pulse', femoral_pulse='$femoral_pulse',
-radial_pulse='$radial_pulse', capillary_refill='$capillary_refill', skin_temperature='$skin_temperature',
-skin_moisture='$skin_moisture', skin_color='$skin_color', pupils='$pupils', sao2='$sao2', airway='$airway', 
-respiratory = '$respiratory', skeletal = '$skeletal', other = '$other', tag='$tag'
-WHERE id='$idtoedit'");
 $conn->close();
 
+header("Location: index.php");
 
-header('Location: edit.php');
 ?>

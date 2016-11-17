@@ -15,7 +15,7 @@
           });
           });
         </script>
-
+		<link rel="stylesheet" href = "CSS/styles.css">
       </head>
 </html>
 
@@ -25,7 +25,7 @@ $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = 'emt';
-$table = 'medical';
+$table = 'trauma';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -46,15 +46,15 @@ if($idtoedit != '')
 	?>
 <body>
 <div class="container">
-  <form method="post" action="medicalUpdate.php">
-    <div class="col-md-3 col-xs-6">
+  <form method="post" action="traumaUpdate.php">
+    <div class="col-xs-12">
 	<h2> Row: <?php echo $_GET['id']; ?></h2> <input type="hidden" name ="id" id="id" value = "<?php echo $_GET['id']; ?>" />
 	</div>
-    <div class="col-md-3 col-xs-6">
+    <div class="col-md-6 col-xs-12">
       <div class="field_title">Scenario</div><input type="text" name="scenario" id="scenario" 
 	  value="<?php echo $row['scenario']; ?>"/>
     </div>
-    <div class="col-md-3 col-xs-6">
+    <div class="col-md-6 col-xs-12">
       <div class="field_title">Patient Data</div><input type="text" name="patient_data" id="patient_data"
 	   value="<?php echo $row['patient_data']; ?>"/>
     </div>
@@ -130,15 +130,20 @@ if($idtoedit != '')
       <div class="field_title">Skeletal</div><input type="text" name="skeletal" id="skeletal"
 	   value="<?php echo $row['skeletal']; ?>"/>
     </div>
-    <div class="col-md-3 col-xs-6">
-      <div class="field_title">Other</div><input type="text" name="other" id="other"
-	   value="<?php echo $row['other']; ?>"/>
-    </div>
+    
 	<div class="col-md-3 col-xs-6">
       <div class="field_title">Respiratory</div><input type="text" name="respiratory" id="respiratory"
 	   value="<?php echo $row['respiratory']; ?>"/>
     </div>
-    <input type="submit" />
+	<div class="col-md-3 col-xs-6">
+      <div class="field_title">Other</div><input type="text" name="other" id="other"
+	   value="<?php echo $row['other']; ?>"/>
+    </div>
+	<div class="col-md-3 col-xs-6">
+      <div class="field_title">Category</div><input type="text" name="tag" id="tag"
+	   value="<?php echo $row['tag']; ?>"/>
+    </div>
+    <input class="submit" type="submit" />
   </form>
 
 </div>

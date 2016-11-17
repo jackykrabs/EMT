@@ -97,9 +97,9 @@ $(document).ready(function(){
         SaO2</br><input type="text" name="sao2" id="sao2"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Tag</br><input type="text" name="tag" id="tag"/>
+        Category</br><input type="text" name="tag" id="tag"/>
       </div>
-      <input type="submit" />
+      <input class="submit" type="submit" />
     </form>
     <table border="1">
       <br/>
@@ -241,10 +241,10 @@ $result = $conn->query("SELECT * FROM $table");
         Other</br><input type="text" name="other" id="other"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Tag</br><input type="text" name="tag" id="tag"/>
+        Category</br><input type="text" name="tag" id="tag"/>
       </div>
 
-      <input type="submit" />
+      <input class="submit" type="submit" />
     </form>
 	 <!-- Dislays the table headers--!>
     <table border="1">
