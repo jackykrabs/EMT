@@ -101,7 +101,7 @@ $(document).ready(function(){
       </div>
       <input class="submit" type="submit" />
     </form>
-    <table border="1">
+<table border="1">
       <br/>
       <h2>Medical Scenarios</h2>
       <br/>
