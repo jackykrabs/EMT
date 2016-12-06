@@ -1,9 +1,13 @@
+<html>
+<h2><a href="index.php">HOME</a></h2>
+</html>
+
 <?php 
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = "emt";
-$table = "medical";
+$table = "trauma";
 
 //create connection 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,59 +18,37 @@ if($conn->connect_error) {
 }
 
 //get the id from index.php
-$id = $_POST['id'];
+$id = $_GET['id'];
+//echo ("$id");
 
 //pull all the individual pieces of data out of the specific row in the table 
-$tag = $conn->query("SELECT tag FROM $table WHERE id = $id");
-$scenario = $conn->query("SELECT scenario FROM $table WHERE id = $id");
-$patient_data = $conn->query("SELECT patient_data FROM $table WHERE id = $id");
-$life_threat = $conn->query("SELECT life_threat FROM $table WHERE id = $id");
-$level_of_consiousness = $conn->query("SELECT level_of_consciousness FROM $table WHERE id = $id");
-$respirations = $conn->query("SELECT respirations FROM $table WHERE id = $id");
-$lung_sounds = $conn->query("SELECT lung_sounds FROM $table WHERE id = $id");
-$pulse = $conn->query("SELECT pulse FROM $table WHERE id = $id");
-$blood_pressure = $conn->query("SELECT blood_pressure FROM $table WHERE id = $id");
-$carotid_pulse = $conn->query("SELECT carotid_pulse FROM $table WHERE id = $id");
-$femoral_pulse = $conn->query("SELECT femoral_pulse FROM $table WHERE id = $id");
-$radial_pulse = $conn->query("SELECT radial_pulse FROM $table WHERE id = $id");
-$capillary_refill = $conn->query("SELECT capillary_refill FROM $table WHERE id = $id");
-$skin_temperature = $conn->query("SELECT skin_temperature FROM $table WHERE id = $id");
-$skin_moisture = $conn->query("SELECT skin_moisture FROM $table WHERE id = $id");
-$skin_color = $conn->query("SELECT skin_color FROM $table WHERE id = $id");
-$pupils = $conn->query("SELECT pupils FROM $table WHERE id = $id");
-$sao2 = $conn->query("SELECT sao2 FROM $table WHERE id = $id");
-$airway = $conn->query("SELECT airway FROM $table WHERE id = $id");
-$respiratory = $conn->query("SELECT respiratory FROM $table WHERE id = $id");
-$skeletal = $conn->query("SELECT skeletal FROM $table WHERE id = $id");
-$other = $conn->query("SELECT other FROM $table WHERE id = $id");
-
-//display all the pieces of data 
-echo ("Tag: {$tag}\n");
-echo ("Scenario: {$scenario}\n");
-echo ("Patient Data: {$patient_data}\n");
-echo ("Life Threat: {$life_threat}\n");
-echo ("Level Of Consiousness: {$level_of_consciousness}\n");
-echo ("Respirations: {$respirations}\n");
-echo {"Lung Sounds: {$lung_sounds}\n"};
-echo ("Pulse: {$pulse}\n");
-echo ("Blood Pressure: {$blood_pressure}\n");
-echo ("Carotid Pulse: {$carotid_pulse}\n");
-echo ("Femoral Pulse: {$femoral_pulse}\n");
-echo ("Raidal Pulse: {$radial_pulse}\n");
-echo ("Capillary Refill: {$capillary_refill}\n");
-echo ("Skin Temperature: {$skin_temperature}\n");
-echo ("Skin Moisture: {$skin_moisture}\n");
-echo ("Skin Color: {$skin_color}\n");
-echo ("Pupils: {$pupils}\n");
-echo ("SAO2: {$sao2}\n");
-echo ("Airway: {$airway}\n");
-echo ("Respiratory: {$respiratory}\n");
-echo ("Skeletal: {$skeletal}\n");
-echo ("Other: {$other}\n");
+$row = $conn->query("SELECT * FROM $table WHERE id = $id");
+$results = $row->fetch_assoc();
+echo "Test ID: " . $results['id'] . "<br>";
+echo "Category: " . $results['tag'] . "<br>";
+echo "Scenario: " . $results['scenario'] . "<br>";
+echo "Patient Data: " . $results['patient_data'] . "<br>";
+echo "Life Threat: " . $results['life_threat'] . "<br>";
+echo "Level Of Consiousness: " . $results['level_of_consiousness'] . "<br>";
+echo "Respirations: " . $results['respirations'] . "<br>";
+echo "Lung Sounds: " . $results['lung_sounds'] . "<br>";
+echo "Pulse: " . $results['pulse'] . "<br>";
+echo "Blood Pressure: " . $results['blood_pressure'] . "<br>";
+echo "Carotid Pulse: " . $results['carotid_pulse'] . "<br>";
+echo "Femoral Pulse: " . $results['femoral_pulse'] . "<br>";
+echo "Radial Pulse: " . $results['radial_pulse'] . "<br>";
+echo "Capillary Refill: " . $results['capillary_refill'] . "<br>";
+echo "Skin Temperature: " . $results['skin_temperature'] . "<br>";
+echo "Skin Moisture: " . $results['skin_moisture'] . "<br>";
+echo "Skin Color: " . $results['skin_color'] . "<br>";
+echo "Pupils: " . $results['pupils'] . "<br>";
+echo "SAO2: " . $results['sao2'] . "<br>";
+echo "Airway: " . $results['airway'] . "<br>";
+echo "Respiratory: " . $results['respiratory'] . "<br>";
+echo "Skeletal: " . $results['skeletal'] . "<br>";
+echo "Other: " . $results['other'] . "<br>";
 
 ?>
 
-<html>
-<h2><a href="index.php">HOME</a></h2>
-</html>
+
 
