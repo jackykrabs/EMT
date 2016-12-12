@@ -13,10 +13,8 @@
 
     
    </head>
-=======
 <h2><a href="index.php">HOME</a></h2>
 </html>
->>>>>>> origin/master
 
 <?php 
 $servername = "localhost";
@@ -24,10 +22,7 @@ $username = "root";
 $password = "root";
 $dbname = "emt";
 $table = "trauma";
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 //create connection 
 $conn = new mysqli($servername, $username, $password, $dbname);
 //check connection 
@@ -36,11 +31,9 @@ if($conn->connect_error) {
 }
 //get the id from index.php
 $id = $_GET['id'];
-<<<<<<< HEAD
 //pull all the individual pieces of data out of the specific row in the table 
 $row = $conn->query("SELECT * FROM $table WHERE id = $id");
 $results = $row->fetch_assoc();
-=======
 //echo ("$id");
 
 //pull all the individual pieces of data out of the specific row in the table 
@@ -69,7 +62,6 @@ echo "Airway: " . $results['airway'] . "<br>";
 echo "Respiratory: " . $results['respiratory'] . "<br>";
 echo "Skeletal: " . $results['skeletal'] . "<br>";
 echo "Other: " . $results['other'] . "<br>";
->>>>>>> origin/master
 
 ?>
 <div class="container details">
@@ -92,7 +84,7 @@ echo "Other: " . $results['other'] . "<br>";
 		</div>
 		<div class="box rightBox col-xs-12 col-md-6">
 				<p><?php echo $results['life_threat'];?></p>
-				<p><?php echo $results['potentail_life_threat']
+				<p><?php echo $results['potentail_life_threat']?></p>
 		</div>
 	</div>
 	<div class="vital_signs col-xs-12">
@@ -220,9 +212,4 @@ echo "Other: " . $results['other'] . "<br>";
 	</div>
 </div>
 
-<<<<<<< HEAD
 </html>
-=======
-
-
->>>>>>> origin/master
