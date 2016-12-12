@@ -1,68 +1,151 @@
+<html>
+ <head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="CSS/styles.css">
+
+    
+   </head>
+
 <?php 
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = "emt";
 $table = "medical";
-
 //create connection 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 //check connection 
 if($conn->connect_error) {
 	die("Connection failed: ". $conn->connect_error);
 }
-
 //get the id from index.php
-$id = $_POST['id'];
-
+$id = $_GET['id'];
 //pull all the individual pieces of data out of the specific row in the table 
-$tag = $conn->query("SELECT tag FROM $table WHERE id = $id");
-$scenario = $conn->query("SELECT scenario FROM $table WHERE id = $id");
-$patient_data = $conn->query("SELECT patient_data FROM $table WHERE id = $id");
-$life_threat = $conn->query("SELECT life_threat FROM $table WHERE id = $id");
-$level_of_consiousness = $conn->query("SELECT level_of_consciousness FROM $table WHERE id = $id");
-$respirations = $conn->query("SELECT respirations FROM $table WHERE id = $id");
-$lung_sounds = $conn->query("SELECT lung_sounds FROM $table WHERE id = $id");
-$pulse = $conn->query("SELECT pulse FROM $table WHERE id = $id");
-$blood_pressure = $conn->query("SELECT blood_pressure FROM $table WHERE id = $id");
-$carotid_pulse = $conn->query("SELECT carotid_pulse FROM $table WHERE id = $id");
-$femoral_pulse = $conn->query("SELECT femoral_pulse FROM $table WHERE id = $id");
-$radial_pulse = $conn->query("SELECT radial_pulse FROM $table WHERE id = $id");
-$capillary_refill = $conn->query("SELECT capillary_refill FROM $table WHERE id = $id");
-$skin_temperature = $conn->query("SELECT skin_temperature FROM $table WHERE id = $id");
-$skin_moisture = $conn->query("SELECT skin_moisture FROM $table WHERE id = $id");
-$skin_color = $conn->query("SELECT skin_color FROM $table WHERE id = $id");
-$pupils = $conn->query("SELECT pupils FROM $table WHERE id = $id");
-$sao2 = $conn->query("SELECT sao2 FROM $table WHERE id = $id");
-$airway = $conn->query("SELECT airway FROM $table WHERE id = $id");
-$respiratory = $conn->query("SELECT respiratory FROM $table WHERE id = $id");
-$skeletal = $conn->query("SELECT skeletal FROM $table WHERE id = $id");
-$other = $conn->query("SELECT other FROM $table WHERE id = $id");
-
-//display all the pieces of data 
-echo ("Tag: {$tag}\n");
-echo ("Scenario: {$scenario}\n");
-echo ("Patient Data: {$patient_data}\n");
-echo ("Life Threat: {$life_threat}\n");
-echo ("Level Of Consiousness: {$level_of_consciousness}\n");
-echo ("Respirations: {$respirations}\n");
-echo {"Lung Sounds: {$lung_sounds}\n"};
-echo ("Pulse: {$pulse}\n");
-echo ("Blood Pressure: {$blood_pressure}\n");
-echo ("Carotid Pulse: {$carotid_pulse}\n");
-echo ("Femoral Pulse: {$femoral_pulse}\n");
-echo ("Raidal Pulse: {$radial_pulse}\n");
-echo ("Capillary Refill: {$capillary_refill}\n");
-echo ("Skin Temperature: {$skin_temperature}\n");
-echo ("Skin Moisture: {$skin_moisture}\n");
-echo ("Skin Color: {$skin_color}\n");
-echo ("Pupils: {$pupils}\n");
-echo ("SAO2: {$sao2}\n");
+$row = $conn->query("SELECT * FROM $table WHERE id = $id");
+$results = $row->fetch_assoc();
 
 ?>
+<div class="container details">
+	<div class="top col-xs-12 row">
+		<h2><a href="index.php">HOME</a></h2>
+		<h2>Medical Scenario: Case # <?php echo $results['id'];?></h2>
+	</div>
+	<div class="scenarioDetails col-xs-12 row">
+		<h3>Scenario</h3>
+		<p><?php echo $results['scenario'];?></p>
+	</div>
+	<div class="patientDataDetails col-xs-12 row">
+		<h3>Patient Data</h3>
+		<p><?php echo $results['patient_data'];?></p>
+	</div>
+	<div class="lifeThreatDetails col-xs-12 row">
+		<div class="box col-xs-12 col-md-6">
+				<h4>Life Threat</h4>
+				<h4>Potential Life Threat</h4>
+		</div>
+		<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['life_threat'];?></p>
+				<p><?php echo $results['potentail_life_threat']
+		</div>
+	</div>
+	<div class="vital_signs col-xs-12">
+		<h3>Vital Signs</h3>
+		<div class="row border border_top">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Level of Consciousness</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['level_of_consciousness'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Respirations</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['respirations'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Lung Sounds</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['lung_sounds'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Pulse</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['pulse'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Blood Pressure
+				<ul>
+					<li>Carotid Pulse</li>
+					<li>Femoral Pulse</li>
+					<li>Radial Pulse</li>
+				<ul>
+			</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['blood_pressure'];?></p>	
+				<p><?php echo $results['carotid_pulse'];?></p>	
+				<p><?php echo $results['femoral_pulse'];?></p>	
+				<p><?php echo $results['radial_pulse'];?></p>	
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Capillary Refill</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['capillary_refill'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Skin Temperature
+					<ul>
+						<li>Moisture</li>
+						<li>Color</li>
+					<ul>
+				</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['skin_temperature'];?></p>	
+				<p><?php echo $results['skin_moisture'];?></p>	
+				<p><?php echo $results['skin_color'];?></p>	
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>Pupils</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['pupils'];?></p>
+			</div>
+		</div>
+		<div class="row border">
+			<div class="box col-xs-12 col-md-6">
+				<h4>SAO2</h4>
+			</div>
+			<div class="box rightBox col-xs-12 col-md-6">
+				<p><?php echo $results['sao2'];?></p>
+			</div>
+		</div>
+	</div>
+</div>
 
-<html>
-<h2><a href="index.php">HOME</a></h2>
 </html>
-

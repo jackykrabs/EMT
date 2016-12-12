@@ -65,6 +65,10 @@ if($idtoedit != '')
       <div class="field_title">Life Threat</div><input type="text" name="life_threat" id="life_threat"
 	   value="<?php echo $row['life_threat']; ?>"/>
     </div>
+	<div class="col-md-3 col-xs-6">
+      <div class="field_title">Potential Life Threat</div><input type="text" name="life_threat" id="life_threat"
+	   value="<?php echo $row['potential_life_threat']; ?>"/>
+    </div>
     <div class="col-md-3 col-xs-6">
       <div class="field_title">Level of Consciousness</div><input type="text" name="level_of_consciousness" id="level_of_consciousness"
 	   value="<?php echo $row['level_of_consciousness']; ?>"/>

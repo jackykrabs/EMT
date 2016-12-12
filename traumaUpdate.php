@@ -11,6 +11,7 @@ $idtoedit = $_POST['id'];
 $tag = $_POST['tag'];
 $scenario = $_POST['scenario'];
 $patient_data = $_POST['patient_data'];
+$potential_life_threat = $_POST['potential_life_threat'];
 $life_threat = $_POST['life_threat'];
 $level_of_consciousness = $_POST['level_of_consciousness'];
 $respirations = $_POST['respirations'];
@@ -26,6 +27,10 @@ $skin_moisture = $_POST['skin_moisture'];
 $skin_color = $_POST['skin_color'];
 $pupils = $_POST['pupils'];
 $sao2 = $_POST['sao2'];
+$airway = $_POST['airway'];
+$respiratory = $_POST['respiratory'];
+$skeletal = $_POST['skeletal'];
+$other = $_POST['other'];
 
 // Check connection
 if ($conn->connect_error) {
@@ -36,7 +41,9 @@ life_threat = '$life_threat', level_of_consciousness = '$level_of_consciousness'
 respirations = '$respirations', lung_sounds = '$lung_sounds' , pulse = '$pulse',
 blood_pressure='$blood_pressure' , carotid_pulse = '$carotid_pulse', femoral_pulse='$femoral_pulse' ,
 radial_pulse = '$radial_pulse' , capillary_refill = '$capillary_refill', skin_temperature ='$skin_temperature',
-skin_moisture = '$skin_moisture',skin_color = '$skin_color', pupils = '$pupils' ,sao2= '$sao2', tag = '$tag' WHERE id=$idtoedit");
+skin_moisture = '$skin_moisture',skin_color = '$skin_color', pupils = '$pupils' ,sao2= '$sao2', tag = '$tag',
+airway = '$airway', respiratory = '$respiratory',  skeletal = '$skeletal', other = '$other'
+potential_life_threat = '$potential_life_threat' WHERE id=$idtoedit");
 
 $conn->close();
 

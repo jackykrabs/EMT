@@ -1,7 +1,66 @@
 .container input {
 	width:100%;
 }
-
 .submit {
 	margin: 5px 15px 5px 0;
+}
+h2 {
+	text-align:center;
+}
+h3 {
+	text-align:center;
+}
+h4 {
+	font-weight:bold;
+}
+
+.scenarioDetails {
+	border: #000 solid 2px;
+	margin:10px 0;
+}
+
+.patientDataDetails {
+	border: #000 solid 2px;
+	margin:10px 0;
+}
+
+.lifeThreatDetails {
+	border: #000 solid 2px;
+	margin:10px 0 20px;;
+}
+.border {
+	border-bottom:#000 solid 2px;
+}
+
+.vital_signs {
+	border:#000 solid 2px;
+	border-bottom:none;
+}
+.vital_signs p {
+	text-align:center;
+}
+
+.rightBox {
+	border-left:#000 solid 2px;
+	padding:5px;
+}
+.border_top {
+	border-top: #000 solid 2px;
+}
+
+.details p {
+	text-align:center;
+}
+.details ul {
+	list-style:none;
+}
+.details li {
+	margin:10px 0;
+}
+
+@media (max-width: 892px) {
+ .rightBox {
+	border-left:none;
+	padding:5px;
+ }
 }
