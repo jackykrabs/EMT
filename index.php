@@ -104,6 +104,13 @@ $(document).ready(function(){
 <table border="1">
       <br/>
       <h2>Medical Scenarios</h2>
+	  <h3>Search Medical Scenarios</h3>
+	  <form method = "get" action = "medicalSearch.php">
+		Tag: <br>
+		<div class="col-md-3 col-xs-6">
+			<input type = "text" name = "searchTag">
+			<input type = "submit" value = "Submit">
+		</div>
       <br/>
 	  <!--Table header--!>
       <tr>
@@ -250,6 +257,13 @@ $result = $conn->query("SELECT * FROM $table");
     <table border="1">
       <br/>
       <h2>Trauma Scenarios</h2>
+	  <h3>Search Trauma Scenarios</h3>
+	  <form method = "get" action = "traumaSearch.php">
+		Tag: <br>
+		<div class="col-md-3 col-xs-6">
+			<input type = "text" name = "searchTag">
+			<input type = "submit" value = "Submit">
+		</div>
       <br/>
       <tr>
         <th>ID</th>
@@ -265,7 +279,6 @@ $result = $conn->query("SELECT * FROM $table");
 <?php
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        
 		echo '<tr>';
 
 		//table content for each row
