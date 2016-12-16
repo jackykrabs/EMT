@@ -1,6 +1,9 @@
 .container input {
 	width:100%;
 }
+.container {
+    margin-bottom:40px;
+}
 .submit {
 	margin: 5px 15px 5px 0;
 }
@@ -58,9 +61,50 @@ h4 {
 	margin:10px 0;
 }
 
-@media (max-width: 892px) {
+@media (max-width: 910px) {
  .rightBox {
 	border-left:none;
 	padding:5px;
  }
+}
+
+.search {
+    padding:20px;
+    margin-bottom:20px;
+}
+
+@media print {
+    h2 {
+        display:none;
+    }
+    .col-md-6 {
+        background-color:red;
+        width:50%;
+    }
+    .rightBox {
+	border-left:#000 solid 2px;
+    }
+
+    html, body {
+    /*changing width to 100% causes huge overflow and wrap*/
+    height:100%; 
+    background: #FFF; 
+    font-size: 9.5pt;
+  }
+
+  .template { width: auto; left:0; top:0; }
+
+      h1, h2, h3, h4, h5 {
+      font-weight: bold;
+      page-break-after: avoid;
+      page-break-inside:avoid;
+    }
+
+    h1+p, h2+p, h3+p {
+      page-break-before: avoid;
+    }
+
+    table, figure {
+      page-break-inside: avoid;
+    }
 }

@@ -51,6 +51,9 @@ $(document).ready(function(){
       <div class="col-md-6 col-xs-12">
         Patient Data</br><input type="text" name="patient_data" id="patient_data"/>
       </div>
+	  <div class="col-md-3 col-xs-6">
+        Threat</br><input type="text" name="life_threat" id="life_threat"/>
+      </div>
       <div class="col-md-3 col-xs-6">
         Potential Life Threat</br><input type="text" name="potential_life_threat" id="potential_life_threat"/>
       </div>
@@ -58,13 +61,13 @@ $(document).ready(function(){
         Level of Consciousness</br><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Respirations</br><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
+        Respirations</br><input type="text" name="respirations" id="respirations" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Lung Sounds</br><input type="text" name="lung_sounds" id="lung_sounds"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Pulse</br><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
+        Pulse</br><input type="text" name="pulse" id="pulse" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Blood Pressure</br><input type="text" name="blood_pressure" id="blood_pressure"/>
@@ -104,14 +107,17 @@ $(document).ready(function(){
 <table border="1">
       <br/>
       <h2>Medical Scenarios</h2>
+	<div class="search row">
 	  <h3>Search Medical Scenarios</h3>
 	  <form method = "get" action = "medicalSearch.php">
-		Tag: <br>
-		<div class="col-md-3 col-xs-6">
+		<div class="col-sm-3"></div>
+		<div class="col-xs-12 col-sm-6">
 			<input type = "text" name = "searchTag">
 			<input type = "submit" value = "Submit">
 		</div>
-      <br/>
+		<div class="col-sm-3"></div>
+	  </form>
+   </div>
 	  <!--Table header--!>
       <tr>
         <th>ID</th>
@@ -193,17 +199,20 @@ $result = $conn->query("SELECT * FROM $table");
       <div class="col-md-3 col-xs-6">
         Life Threat</br><input type="text" name="life_threat" id="life_threat"/>
       </div>
+	  <div class="col-md-3 col-xs-6">
+        Potential Life Threat</br><input type="text" name="potential_life_threat" id="potential_life_threat"/>
+      </div>
       <div class="col-md-3 col-xs-6">
         Level of Consciousness</br><input type="text" name="level_of_consciousness" id="level_of_consciousness"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Respirations</br><input type="number" name="respirations" id="respirations" min="0" max ="10000"/>
+        Respirations</br><input type="text" name="respirations" id="respirations" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Lung Sounds</br><input type="text" name="lung_sounds" id="lung_sounds"/>
       </div>
       <div class="col-md-3 col-xs-6">
-        Pulse</br><input type="number" name="pulse" id="pulse" min="0" max ="10000"/>
+        Pulse</br><input type="text" name="pulse" id="pulse" min="0" max ="10000"/>
       </div>
       <div class="col-md-3 col-xs-6">
         Blood Pressure</br><input type="text" name="blood_pressure" id="blood_pressure"/>
@@ -257,14 +266,17 @@ $result = $conn->query("SELECT * FROM $table");
     <table border="1">
       <br/>
       <h2>Trauma Scenarios</h2>
+	  <div class="search row">
 	  <h3>Search Trauma Scenarios</h3>
 	  <form method = "get" action = "traumaSearch.php">
-		Tag: <br>
-		<div class="col-md-3 col-xs-6">
+		<div class="col-sm-3"></div>
+		<div class="col-xs-12 col-sm-6">
 			<input type = "text" name = "searchTag">
 			<input type = "submit" value = "Submit">
 		</div>
-      <br/>
+		<div class="col-sm-3"></div>
+	  </form>
+   </div>
       <tr>
         <th>ID</th>
         <th>Scenario</th>

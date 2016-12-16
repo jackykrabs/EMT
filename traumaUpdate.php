@@ -38,12 +38,11 @@ if ($conn->connect_error) {
 }
 $conn->query("UPDATE $table SET scenario = '$scenario', patient_data = '$patient_data',
 life_threat = '$life_threat', level_of_consciousness = '$level_of_consciousness',
-respirations = '$respirations', lung_sounds = '$lung_sounds' , pulse = '$pulse',
-blood_pressure='$blood_pressure' , carotid_pulse = '$carotid_pulse', femoral_pulse='$femoral_pulse' ,
+respirations = '$respirations', potential_life_threat = '$potential_life_threat',lung_sounds = '$lung_sounds' , 
+pulse = '$pulse', blood_pressure='$blood_pressure' , carotid_pulse = '$carotid_pulse', femoral_pulse='$femoral_pulse',
 radial_pulse = '$radial_pulse' , capillary_refill = '$capillary_refill', skin_temperature ='$skin_temperature',
 skin_moisture = '$skin_moisture',skin_color = '$skin_color', pupils = '$pupils' ,sao2= '$sao2', tag = '$tag',
-airway = '$airway', respiratory = '$respiratory',  skeletal = '$skeletal', other = '$other'
-potential_life_threat = '$potential_life_threat' WHERE id=$idtoedit");
+airway = '$airway', respiratory = '$respiratory',  skeletal = '$skeletal', other = '$other' WHERE id=$idtoedit");
 
 $conn->close();
 

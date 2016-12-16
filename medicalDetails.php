@@ -9,15 +9,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <link rel="stylesheet" href="CSS/styles.css">
-
-    
+ 
    </head>
-
-
-<html>
-<h2><a href="index.php">HOME</a></h2>
-</html>
-
 <?php 
 $servername = "localhost";
 $username = "root";
@@ -60,7 +53,7 @@ $results = $row->fetch_assoc();
           <?php echo $results['life_threat'];?>
         </p>
         <p>
-          <?php echo $results['potentail_life_threat'];?>
+          <?php echo $results['potential_life_threat'];?>
         </p>
 		</div>
 	</div>

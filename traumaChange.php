@@ -63,7 +63,7 @@ if($idtoedit != '')
 	   value="<?php echo $row['life_threat']; ?>"/>
     </div>
 	<div class="col-md-3 col-xs-6">
-      <div class="field_title">Potential Life Threat</div><input type="text" name="life_threat" id="life_threat"
+      <div class="field_title">Potential Life Threat</div><input type="text" name="potential_life_threat" id="potential_life_threat"
 	   value="<?php echo $row['potential_life_threat']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
@@ -71,7 +71,7 @@ if($idtoedit != '')
 	   value="<?php echo $row['level_of_consciousness']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Respirations</div><input type="number" name="respirations" id="respirations" min="0" max ="10000"
+      <div class="field_title">Respirations</div><input type="text" name="respirations" id="respirations" min="0" max ="10000"
 	   value="<?php echo $row['respirations']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
@@ -79,7 +79,7 @@ if($idtoedit != '')
 	   value="<?php echo $row['lung_sounds']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
-      <div class="field_title">Pulse</div><input type="number" name="pulse" id="pulse" min="0" max ="10000"
+      <div class="field_title">Pulse</div><input type="text" name="pulse" id="pulse" min="0" max ="10000"
 	   value="<?php echo $row['pulse']; ?>"/>
     </div>
     <div class="col-md-3 col-xs-6">
